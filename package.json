@@ -1,0 +1,19 @@
+{
+  "name": "intern-a11y-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/intern/bin/intern-runner config=tests/intern"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "intern": "^3.4.6",
+    "intern-a11y": "^0.1.2",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "test"
+  ]
+}

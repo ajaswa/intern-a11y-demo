@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+		<title>Accessibility Report</title>
+			<style>
+				html { font-family:sans-serif; background:#eee; }
+				body { width:800px; padding:1em; margin:0 auto; }
+
+				section { border:solid 1px #ddd; border-radius:2px; background:white; padding:1em; margin-bottom:1em; overflow:hidden; }
+				section:last-of-type { margin-bottom:0; }
+				section > * { margin-bottom:1em; }
+				section > *:last-child { margin-bottom:0; }
+
+				h1 { margin:0; margin-bottom:0.5em; }
+				h2 { margin:0; margin-bottom:0.25em; font-size:110%; }
+				pre { border-radius:4px; padding:0.5em; margin:0; overflow:auto; color:#999; }
+
+				.violation { border:solid 1px #e7e7e7; border-radius:2px; margin-bottom:1em; background:#f7f7f7; overflow:hidden; }
+				.violation:last-child { margin-bottom:0; }
+
+				.header > * { margin:1em 0.5em; }
+				.header > *:first-child { margin-top:0.5em; }
+
+				.description { color:#444; }
+
+				.standards ul { margin:0; }
+
+				.snippet { border-radius:0; background:#eee; }
+
+				ul.meta { padding-left:0; }
+				ul.meta li { list-style-type:none; }
+				li .label { font-weight:bold; width:5em; display:inline-block; }
+				li .label:after { content:':'; }
+
+				.when-open { display:none; }
+				.when-closed { display:block; }
+				span.when-closed { display:inline; }
+				.open .when-closed { display:none; }
+				.open .when-open { display:block; }
+				.open span.when-open { display:inline; }
+
+				.raw-results pre { padding:0.5em; background:#f5f5f5; color:#444; margin-top:0.5em; }
+			</style>
+			<script>
+				window.addEventListener('load', function () {
+					document.body.addEventListener('click', function (event) {
+						var target = event.target;
+						while (target) {
+							if (target.getAttribute('data-action') === 'toggle-open') {
+								event.preventDefault();
+								target.parentElement.classList.toggle('open');
+								return false;
+							}
+							target = target.parentElement;
+						}
+					});
+				});
+			</script>
+		</head>
+		<body>
+			<section class="results"><h1>chrome on any platform - aXe - Sorted buttons</h1><ul class="meta">
+		<li><span class="label">Analyzer</span> axe</li>
+		<li><span class="label">Source</span> http://localhost:9000/index.html?test=plib-button-sort</li>
+	</ul><div class="violation">
+		<div class="header">
+			<div class="target"><h2>Target</h2><span class="selector">html</span></div>
+			<div class="message"><h2>Summary</h2><a href="https://dequeuniversity.com/rules/axe/2.0/document-title?application=axeAPI">Documents must have &lt;title> element to aid in navigation</a></div>
+			<div class="description"><h2>Description</h2>Ensures each HTML document contains a non-empty &lt;title> element</div>
+			<div class="standards">
+			<h2>Standards</h2>
+			<ul>
+				<li>Wcag2a</li><li>Web Content Accessibility Guidelines (WCAG) 2.0, Level A: 2.4.2</li>
+			</ul>
+		</div>
+		</div>
+		<pre class="snippet">&lt;html>&lt;head>&lt;/head>&lt;body>&lt;/body>&lt;/html></pre>
+	</div><div class="violation">
+		<div class="header">
+			<div class="target"><h2>Target</h2><span class="selector">html</span></div>
+			<div class="message"><h2>Summary</h2><a href="https://dequeuniversity.com/rules/axe/2.0/html-has-lang?application=axeAPI">&lt;html> element must have a lang attribute</a></div>
+			<div class="description"><h2>Description</h2>Ensures every HTML document has a lang attribute</div>
+			<div class="standards">
+			<h2>Standards</h2>
+			<ul>
+				<li>Wcag2a</li><li>Web Content Accessibility Guidelines (WCAG) 2.0, Level A: 3.1.1</li>
+			</ul>
+		</div>
+		</div>
+		<pre class="snippet">&lt;html>&lt;head>&lt;/head>&lt;body>&lt;/body>&lt;/html></pre>
+	</div><div class="raw-results">
+		<button data-action="toggle-open"><span class="when-open">Hide</span><span class="when-closed">Show</span> raw results</button>
+		<pre class="when-open">{
+  "passes": [],
+  "url": "http://localhost:9000/index.html?test=plib-button-sort",
+  "violations": [
+    {
+      "help": "Documents must have &lt;title> element to aid in navigation",
+      "nodes": [
+        {
+          "all": [],
+          "impact": "moderate",
+          "html": "&lt;html>&lt;head>&lt;/head>&lt;body>&lt;/body>&lt;/html>",
+          "none": [],
+          "any": [
+            {
+              "id": "doc-has-title",
+              "data": null,
+              "message": "Document does not have a non-empty &lt;title> element",
+              "impact": "moderate",
+              "relatedNodes": []
+            }
+          ],
+          "target": [
+            "html"
+          ]
+        }
+      ],
+      "impact": "moderate",
+      "description": "Ensures each HTML document contains a non-empty &lt;title> element",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/2.0/document-title?application=axeAPI",
+      "id": "document-title",
+      "tags": [
+        "wcag2a",
+        "wcag242"
+      ]
+    },
+    {
+      "help": "&lt;html> element must have a lang attribute",
+      "nodes": [
+        {
+          "all": [],
+          "impact": "serious",
+          "html": "&lt;html>&lt;head>&lt;/head>&lt;body>&lt;/body>&lt;/html>",
+          "none": [],
+          "any": [
+            {
+              "id": "has-lang",
+              "data": null,
+              "message": "The &lt;html> element does not have a lang attribute",
+              "impact": "serious",
+              "relatedNodes": []
+            }
+          ],
+          "target": [
+            "html"
+          ]
+        }
+      ],
+      "impact": "serious",
+      "description": "Ensures every HTML document has a lang attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/2.0/html-has-lang?application=axeAPI",
+      "id": "html-has-lang",
+      "tags": [
+        "wcag2a",
+        "wcag311"
+      ]
+    }
+  ],
+  "timestamp": "2017-09-18T21:03:50.540Z"
+}</pre>
+	</div></section>
+		</body>
+	</html>
